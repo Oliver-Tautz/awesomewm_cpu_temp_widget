@@ -16,7 +16,7 @@ local function worker(args)
     local low_temp = args.low_temp or low_temp
     local high_temp = args.high_temo or high_temp
 
-    cpu_widget = awful.widget.watch('bash -c "sensors | grep Core\\ 0 | cut -c17-20"', 1,function(widget,stdout)
+    cpu_widget = awful.widget.watch('bash -c "sensors | grep Core\\ 0 | cut -c16-17"', 1,function(widget,stdout)
     temp = tonumber(stdout)
     if temp < low_temp then 
         widget.markup='<span color="blue">'.. stdout ..  '</span>'
